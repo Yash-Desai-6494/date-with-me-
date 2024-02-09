@@ -1,57 +1,63 @@
-body{
+body {
     height: 100vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     background-image: url("/images/2.avif");
-    background-size: 1000px;
-    background-position: center center;
+    background-size: cover;
 }
 
-img{
-    height: 400px;
-    width: 400px;
+.image {
+    margin-bottom: 20px;
 }
 
-.line{
-    font-size: 40px;
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.line {
+    font-size: 30px;
     font-family: cursive;
     font-weight: bolder;
+    margin-bottom: 20px;
 }
 
-button{
-    font-size: 25px;
+button {
+    font-size: 20px;
     padding: 10px 20px;
     border-radius: 10px;
-    box-shadow: 10px 5px 5px purple;
+    box-shadow: 5px 5px 5px purple;
     background: #000;
     color: white;
+    margin: 0 10px;
 }
-.buttons{
+
+.buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
-
 
 .message {
     display: none;
     position: fixed;
-    top: 65%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 24px;
     font-family: cursive;
     font-weight: bolder;
-    height: 110px;
-    width: 80vw;
-    max-width: 700px; /* Added for better responsiveness */
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 10px 5px 5px purple;
-    animation: forwards 1s;
+    box-shadow: 5px 5px 5px purple;
+    animation: popOut 1s forwards;
+    z-index: 1;
 }
 
 @keyframes popOut {
@@ -62,5 +68,20 @@ button{
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .line {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .message {
+        font-size: 18px;
     }
 }
